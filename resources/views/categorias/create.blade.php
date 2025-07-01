@@ -11,7 +11,7 @@
 @csrf
 <label for="nombreC">Nombre:</label>
 <br>
-<input class="form-control"type="text" name="nombreC" id="nombreC" placeholder="ingresa el nombre de la categoria">
+<input class="form-control"type="text" name="nombreC" id="nombreC" placeholder="ingresa el nombre de la categoria" REQUIRED>
 
 <hr>
 <button class="btn btn-outline-dark"type="submit">Agregar categoria</i></button>

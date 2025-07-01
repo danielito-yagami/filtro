@@ -99,7 +99,7 @@
 
     @endif
     -->
-    <div id="bienvenida" class="mt-4 p-5 bg-secondary text-white rounded">
+    <div id="bienvenida" class="mt-4 p-5 bg-success text-white rounded">
     @include("./bienvenida/bienvenida")
     </div>
 
@@ -137,7 +137,7 @@
 
 
 
-           <h5 class="white p1 redondo text-center">Prueba técnica hecha por Daniel Cortes Vaca <?php echo date('Y'); ?></h5>
+           <h5 class="white p1 redondo text-center">Demo hecha por Daniel Cortes Vaca <?php echo date('Y'); ?></h5>
 
 
         </footer>

@@ -7,6 +7,8 @@ $(document).ready(function(){
     $("#categoria").css("display","none")
     $("#producto").css("display","none")
 
+    //Esta funcion es solo para cambiar el color del mensaje estos mensajes vienen del backend
+    //la categoria ya existe si se recibe esta respuesta entonces se toma color rojo
     mensajes("#msj","La categoria ya existe")
     mensajes("#msj2","No se ha podido registrar")
 })

@@ -164,7 +164,7 @@
 
 
 
-           <h5 class="white p3 redondo text-center">Prueba técnica hecha por Daniel Cortes Vaca <?php echo date('Y'); ?></h5>
+           <h5 class="white p3 redondo text-center">Demo técnica hecha por Daniel Cortes Vaca <?php echo date('Y'); ?></h5>
 
 
         </footer>
