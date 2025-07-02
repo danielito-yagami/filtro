@@ -118,6 +118,9 @@ class ProductoController extends Controller
                //Subiendo la imagen al servidor
                $datos['imagen'] = $img->store('uploads/productos','public');
                //echo "funciona";
+
+
+
             }
             //return response()->json($datos);
             //Insertando en la base de datos
