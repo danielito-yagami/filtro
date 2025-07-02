@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Prueba Tecnica</title>
+        <title>Carrito de compras</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -79,8 +79,13 @@
     <div class="col-6">
     <form action="{{ url('/producto')}}" method="get">
     @csrf
+
     <label class="white"for="categoria"><i class="fa-solid fa-filter"></i> Filtrar por categoria:</label>
-    <button type="submit" class="btn btn-primary text-center">Buscar</button>
+
+    <div class="d-flex">
+
+    <div class="col-8 m-0">
+
     <select name="categorias" id="categorias"class="form-select text-center" aria-label="Default select example" required>
 
     <option value="all">Ver todos los productos</option>
@@ -88,6 +93,17 @@
     <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
     @endforeach
     </select>
+
+
+    </div>
+
+    <div class="col-3">
+
+    <button type="submit" class="btn btn-primary text-center m-0"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+    </div>
+
+    </div>
 
     </form>
     </div>
