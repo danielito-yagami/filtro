@@ -28,7 +28,7 @@
     id="barra"class="navbar navbar-expand-sm navbar-light bg-light"
 >
     <div class="container">
-    <img class="navbar-brand redondo" src="<?php echo e(asset('assets/img/logo.png')); ?>" alt="Title" height="100px" width="100px"/>
+    <a href="<?php echo e(asset('./')); ?>"><img class="navbar-brand redondo" src="<?php echo e(asset('assets/img/logo.png')); ?>" alt="Title" height="100px" width="100px"/></a>
 
         <button
             class="navbar-toggler d-lg-none"
@@ -51,6 +51,9 @@
                     <a class="nav-link  boton-link" href="<?php echo e(asset('./edit')); ?>"><i class="fa-solid fa-file-import"></i> Agregar productos/categorias</a>
                 </li>
 
+                  <li class="nav-item">
+                    <a class="nav-link  boton-link" href="https://github.com/danielito-yagami/filtro"><i class="fa-solid fa-book"></i> Acerca de</a>
+                </li>
             </ul>
 
         </div>
