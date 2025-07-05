@@ -17,8 +17,8 @@
             crossorigin="anonymous"
         />
 
-        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome/css/all.css') }}">
+        <link rel="stylesheet" href="<?php echo e(asset('assets/css/styles.css')); ?>">
+        <link rel="stylesheet" href="<?php echo e(asset('assets/css/fontawesome/css/all.css')); ?>">
     </head>
 
     <body id="fondo">
@@ -28,7 +28,7 @@
     id="barra"class="navbar navbar-expand-sm navbar-light bg-light"
 >
     <div class="container">
-    <img class="navbar-brand redondo" src="{{ asset('assets/img/logo.png') }}" alt="Title" height="100px" width="100px"/>
+    <img class="navbar-brand redondo" src="<?php echo e(asset('assets/img/logo.png')); ?>" alt="Title" height="100px" width="100px"/>
 
         <button
             class="navbar-toggler d-lg-none"
@@ -45,10 +45,10 @@
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link  boton-link" href="{{asset('./')}}"><i class="fa-solid fa-list"></i> Lista de productos</a>
+                    <a class="nav-link  boton-link" href="<?php echo e(asset('./')); ?>"><i class="fa-solid fa-list"></i> Lista de productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  boton-link" href="{{asset('./edit')}}"><i class="fa-solid fa-file-import"></i> Agregar productos/categorias</a>
+                    <a class="nav-link  boton-link" href="<?php echo e(asset('./edit')); ?>"><i class="fa-solid fa-file-import"></i> Agregar productos/categorias</a>
                 </li>
 
             </ul>
@@ -77,8 +77,8 @@
 
     <div class="col-6"><h5 class="card-title text-center white">Lista de productos</h5></div>
     <div class="col-6">
-    <form action="{{ url('/producto')}}" method="get">
-    @csrf
+    <form action="<?php echo e(url('/producto')); ?>" method="get">
+    <?php echo csrf_field(); ?>
 
     <label class="white"for="categoria"><i class="fa-solid fa-filter"></i> Filtrar por categoria:</label>
 
@@ -89,9 +89,9 @@
     <select name="categorias" id="categorias"class="form-select text-center" aria-label="Default select example" required>
 
     <option value="all">Ver todos los productos</option>
-    @foreach($categorias as $categoria)
-    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
-    @endforeach
+    <?php $__currentLoopData = $categorias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categoria): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <option value="<?php echo e($categoria->id); ?>"><?php echo e($categoria->nombre); ?></option>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </select>
 
 
@@ -134,22 +134,22 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($productos as $producto)
+        <?php $__currentLoopData = $productos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $producto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr class="">
 
-                <td scope="row"><span class="badge bg-info p-2">{{$producto->id}}</span></td>
-                <td scope="row">{{$producto->nombre}}</td>
-                <td scope="row"><i>{{$producto->descripcion}}</i></td>
-                <td scope="row"><span class="badge bg-warning black">$ {{$producto->precio}}</span></td>
-                @if(isset($producto->imagen))
+                <td scope="row"><span class="badge bg-info p-2"><?php echo e($producto->id); ?></span></td>
+                <td scope="row"><?php echo e($producto->nombre); ?></td>
+                <td scope="row"><i><?php echo e($producto->descripcion); ?></i></td>
+                <td scope="row"><span class="badge bg-warning black">$ <?php echo e($producto->precio); ?></span></td>
+                <?php if(isset($producto->imagen)): ?>
                 <td scope="row">
-                <img src="{{asset('storage/'.$producto->imagen)}}" alt="" height="100" width="100">
+                <img src="<?php echo e(asset('storage/'.$producto->imagen)); ?>" alt="" height="100" width="100">
 
                 </td>
-                @endif
-                <td scope="row"><span class="badge bg-primary">{{$producto->categoria}}</span></td>
+                <?php endif; ?>
+                <td scope="row"><span class="badge bg-primary"><?php echo e($producto->categoria); ?></span></td>
             </tr>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
 </div>
@@ -200,3 +200,4 @@ http://localhost/mercado/storage/app/public/uploads/productos/laptop2.jpg
         ></script>
     </body>
 </html>
+<?php /**PATH C:\wamp64\www\prueba\resources\views/index.blade.php ENDPATH**/ ?>
